@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 jobs:
   hello:
-    runs-on: [self-hosted, wsl]
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
       - name: Pozdrav iz CI-a
