@@ -2,7 +2,6 @@ name: Hello CI
 on:
   push:
   workflow_dispatch:
-
 jobs:
   hello:
     runs-on: [self-hosted, wsl]
@@ -10,13 +9,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Pozdrav iz CI-a
         run: |
-          echo "Zdravo, Nemanja! Radi sa self-hosted runnera."
+          echo "Zdravo iz self-hosted runnera!"
           date
           uname -a
       - name: Napravi artefakt
         run: |
           mkdir -p out
-          echo "Artefakt sa $(date)" > out/report.txt
+          echo "Artefakt: $(date)" > out/report.txt
       - name: Upload artefakta
         uses: actions/upload-artifact@v4
         with:
